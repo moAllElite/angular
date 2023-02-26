@@ -1,4 +1,5 @@
 import { Component ,OnInit} from '@angular/core';
+import {FaceSnapModule} from "./models/face-snap/face-snap.module";
 
 
 @Component({
@@ -8,7 +9,14 @@ import { Component ,OnInit} from '@angular/core';
 })
 
 export class AppComponent implements OnInit{
-  ngOnInit(): void {
+  mySnap!:FaceSnapModule
+  ngOnInit(){
+    this.mySnap = new FaceSnapModule(
+        'Archibald',
+        'Mon meilleur ami depuis tout petit !',
+        './assets/images/img1.jpg',
+        0
+    )
   }
 
 
