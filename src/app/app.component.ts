@@ -12,7 +12,7 @@ export class AppComponent implements OnInit{
   mySnap!:FaceSnapModule
   ngOnInit(){
     this.mySnap = new FaceSnapModule(
-        'Archibald',
+        'Mo',
         'Mon meilleur ami depuis tout petit !',
         './assets/images/img1.jpg',
         0

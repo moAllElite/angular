@@ -7,25 +7,23 @@ import {FaceSnapModule} from "../models/face-snap/face-snap.module";
   styleUrls: ['./snap.component.css']
 })
 export class SnapComponent implements OnInit{
-  @Input() mysnap!:FaceSnapModule;
+  @Input() snapVvs!:FaceSnapModule;
   title?:string;
   description?:string;
   imageUrl?:string;
   snap!:number;
-  buttonText?:string
-  ngOnInit() {/*
-    this.title='mo';
-    this.description='fu pottere';
-    this.imageUrl='./assets/images/img1.jpg';
-    this.snap=0;*/
+  buttonText!:string
+  ngOnInit() {
+    this.buttonText="snap";
   }
   onSnap(){
     if (this.buttonText==="snap") {
+      this.snapVvs.snap++;
       this.buttonText = "oops snap";
-      this.snap++;
+
     }else {
-      this.buttonText=" snap";
-      this.snap--;
+      this.snapVvs.snap--;
+      this.buttonText="snap";
     }
   }
 }
