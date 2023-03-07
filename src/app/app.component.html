@@ -1,1 +1,44 @@
-<app-snap [snapVvs]="mySnap"></app-snap>
+<!--menu-->
+<nav class="navbar navbar-expand-lg bg-body-secondary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <fa-icon [icon]="['fas','home']"></fa-icon>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><fa-icon [icon]="['fas','euro-sign']"></fa-icon>   Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled"><fa-icon [icon]="['fas','warning']"></fa-icon>   Disabled</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--container-->
+<div class="container">
+        <div id=" alertMsg" class="text-success">
+            <p>
+                {{message}}
+            </p>
+        </div>
+  <!--  <app-snap [snapVvs]="mySnap"></app-snap>-->
+    <app-article [article]="myArticle"  [year]="year1" (info)="onAffiche($event)" ></app-article>
+</div>
+<!--footer-->
+<footer class="py-5 bg-dark  bottom-0">
+    <div class="container">
+       <p class="m-0 text-white text-center"> All elite <fa-icon [icon]="['fas','copyright']"></fa-icon>  2023</p>
+    </div>
+</footer>
+<!-- End of .container -->
