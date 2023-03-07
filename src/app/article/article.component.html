@@ -1,0 +1,17 @@
+
+<div class="card" style="width: 18rem;">
+    <img  [src]= article.urlImage class="card-img-top" [title]="year" alt="..." >
+    <div class="card-body">
+        <h5 class="card-title">
+            {{article.titre}}
+            <span *ngIf="dispo===false">Indisponible</span>
+        </h5>
+       <!-- <p class="card-text">{{article.prix}}€</p>-->
+        <a href="#" class="btn btn-dark" (click)="onLike()">
+            <span><fa-icon [icon]="['fas', 'heart']"    [style.color]="article.iconColor" ></fa-icon></span>
+        </a>
+        <p class="card-text">{{article.nbreLike}}</p>
+        <input [(ngModel)]="article.comment" type="text" placeholder="ecrire du texte" class="form-control" >
+        <p class="card-text ms-3">{{article.comment}}</p>
+    </div>
+</div>
