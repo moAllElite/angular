@@ -2,10 +2,10 @@
 <div class="card" style="width: 18rem;">
     <img  [src]= urlImageArticle class="card-img-top"  alt="..." >
     <div class="card-body">
-        <h5 class="card-title" [ngStyle]="{color:getColor()}">
+        <h3 class="card-title" [ngStyle]="{color:getColor()}">
             {{titreArticle | uppercase}} {{0.04254 |percent:'1.2-2'}}
             <span *ngIf="dispo===false">-Indisponible </span>
-        </h5>
+        </h3>
        <p class="card-text">{{prixArticle  |currency:'XOF'}} </p>
         <a href="#" class="btn btn-dark" (click)="onLike()" [ngClass]="
         {'display':  jaime===true,

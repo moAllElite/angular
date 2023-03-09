@@ -21,6 +21,7 @@ export class AppComponent implements OnInit{
   onAffiche(arg:string){
     return this.message="Merci d'avoir acheter :"+arg;
   }
+
   getVisible(){
     if(this.onAffiche!=null){
       return 'visible';
