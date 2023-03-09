@@ -1,7 +1,7 @@
-import { Component ,OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FaceSnapModule} from "./models/face-snap.module";
 import {ArticleModule} from "./models/article.module";
-import {numbers, strings} from "@material/top-app-bar";
+
 
 
 @Component({
@@ -12,9 +12,10 @@ import {numbers, strings} from "@material/top-app-bar";
 
 export class AppComponent implements OnInit{
   mySnap!:FaceSnapModule
-  year1:number=2020;
+  year1:number=Date.now();
   message:string="";
-  myArticle!:ArticleModule
+ // myArticle!:ArticleModule
+
   ngOnInit(){
     /*this.mySnap = new FaceSnapModule(
         'Mo',
@@ -22,7 +23,7 @@ export class AppComponent implements OnInit{
         './assets/images/img1.jpg',
         0
     )*/
-    this.myArticle=new ArticleModule(
+    /*this.myArticle=new ArticleModule(
         'iphone 14',
         15,
         '#FFF',
@@ -30,11 +31,46 @@ export class AppComponent implements OnInit{
         0,
         'alabama'
     )
-
+  */
   }
   onAffiche(arg:string){
-    return this.message="Merci d'avoir acheter :"+arg.toUpperCase();
+    return this.message="Merci d'avoir acheter :"+arg;
   }
-
+  getVisible(){
+    if(this.onAffiche!=null){
+      return 'visible';
+    }else {
+      return  'hidden';
+    }
+  }
+  items=[
+    {
+      titreArticle:"iphone",
+      prixArticle:15,
+      urlImageArticle:"../../assets/images/img5.jpg",
+      nbreLikeArticle:0,
+      commentArticle:'fun',
+      dispo:false,
+      iconColor:"#FFF"
+    },
+    {
+      titreArticle:"TV",
+      prixArticle:250.99,
+      urlImageArticle:"../../assets/images/img2.jpg",
+      nbreLikeArticle:0,
+      commentArticle:'fun',
+      dispo:false,
+      iconColor:"#FFF"
+    },
+    {
+      titreArticle:"car",
+      prixArticle:15000,
+      urlImageArticle:"../../assets/images/img4.jpg",
+      nbreLikeArticle:0,
+      commentArticle:'fun',
+      dispo:true,
+      iconColor:"#FFF"
+    }
+  ]
 
 }
