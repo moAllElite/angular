@@ -8,8 +8,15 @@ import {ArticleModule} from "../models/article.module";
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit{
-   @Input() article!:ArticleModule;
-
+   //@Input() article!:ArticleModule;
+    @Input() titreArticle!:string;
+    @Input() prixArticle!:number;
+    @Input() nbreLikeArticle!:number;
+    @Input() urlImageArticle!:string;
+    @Input() commentArticle!:string;
+    @Input() dispo!:boolean;
+    jaime:boolean=true;
+/*
     titre!:string;
    prix!:number;
 
@@ -17,22 +24,31 @@ export class ArticleComponent implements OnInit{
    iconColor!:string;
    nbreLike!:number;
    comment!:string;
-   dispo:boolean=true;
-   @Input()  year!:number;
+*/
+   @Input()  year!:Date;
+   @Input() iconColor!:string;
    @Output() info=new EventEmitter<string>();
    constructor() {
    }
    ngOnInit() {
    }
     onLike(){
-        if(this.article.iconColor==="#FFF"){
-            this.article.iconColor="#FF2749";
-            this.article.nbreLike++;
-            this.info.emit(this.article.titre);
+        if(this.jaime===true){
+            this.jaime=false;
+            this.nbreLikeArticle++;
+            this.info.emit(this.titreArticle);
         }else {
-            this.article.iconColor="#FFF";
-            this.article.nbreLike--;
+            this.jaime=true;
+            this.nbreLikeArticle--;
+            this.info.emit("");
         }
+    }
+    getColor(){
+       if(this.dispo===true){
+           return  'green';
+       }else {
+            return    'red';
+       }
     }
 
 }

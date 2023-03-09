@@ -27,13 +27,29 @@
 </nav>
 <!--container-->
 <div class="container">
-        <div id=" alertMsg" class="text-success">
+    <div class="text-center text-success">
+        <p>{{year1 |date}}</p>
+    </div>
+        <!--<div id=" alertMsg"  class="mt-2 text-success text-center">
             <p>
                 {{message}}
             </p>
-        </div>
+        </div>-->
   <!--  <app-snap [snapVvs]="mySnap"></app-snap>-->
-    <app-article [article]="myArticle"  [year]="year1" (info)="onAffiche($event)" ></app-article>
+    <div class="d-flex justify-content-evenly">
+        <!-- <app-article [article]="myArticle"  [year]="year1" (info)="onAffiche($event)" ></app-article>-->
+        <app-article *ngFor="let item of items"
+                     [titreArticle]="item.titreArticle"
+                     [prixArticle]="item.prixArticle"
+                     [nbreLikeArticle]="item.nbreLikeArticle"
+                     [commentArticle]="item.commentArticle"
+                     [dispo]="item.dispo"
+                     (info)="onAffiche($event)"
+                     [urlImageArticle]="item.urlImageArticle"
+                     [iconColor]="item.iconColor"
+
+        ></app-article>
+    </div>
 </div>
 <!--footer-->
 <footer class="py-5 bg-dark  bottom-0">
