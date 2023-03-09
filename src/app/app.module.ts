@@ -10,20 +10,33 @@ import { ArticleComponent } from './article/article.component';
 import {FormsModule} from "@angular/forms";
 import{registerLocaleData} from "@angular/common";
 import * as fr from  "@angular/common/locales/fr";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {MatIconModule, MatIconRegistry} from "@angular/material/icon";
+import {MatButton, MatButtonModule} from "@angular/material/button";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
     SnapComponent,
-    ArticleComponent
+    ArticleComponent,
+
   ],
     imports: [
         BrowserModule,
         FontAwesomeModule,
-        FormsModule
+        FormsModule,
+        BrowserAnimationsModule,
+        MatSlideToggleModule,
+        MatIconModule,
+        MatButtonToggleModule,
+        MatButtonModule,
+
     ],
   providers: [
-      {provide:LOCALE_ID,useValue:"fr-FR"}
+      {provide:LOCALE_ID,useValue:"fr-FR" }
   ],
   bootstrap: [AppComponent]
 })

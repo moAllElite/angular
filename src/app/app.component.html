@@ -1,7 +1,10 @@
 <!--menu-->
 <nav class="navbar navbar-expand-lg bg-body-secondary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">Navbar</a>
+        <a class="navbar-brand" href="">
+            Navbar
+        </a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -26,9 +29,16 @@
     </div>
 </nav>
 <!--container-->
-<div class="container">
+<div class="container mb-4" id="parent-of-trt">
+
+    <button mat-fab extended  id="btnHome">
+        <mat-icon color="warn" >home</mat-icon>
+        Home
+    </button>
+
     <div class="text-center text-primary">
-        <p>Mise en ligne {{creatDate |date:'le d MMM yyyy'}}</p>
+        <p>Mise en ligne {{creatDate |date:'le d MMMM yyyy'}}</p>
+        <p>{{4.256 |number}}</p>
     </div>
         <!--<div id=" alertMsg"  class="mt-2 text-success text-center">
             <p>
@@ -37,7 +47,7 @@
         </div>-->
   <!--  <app-snap [snapVvs]="mySnap"></app-snap>-->
     <div class="d-flex justify-content-evenly">
-        <!-- <app-article [article]="myArticle"  [year]="year1" (info)="onAffiche($event)" ></app-article>-->
+        <!-- <app-article [article]="myArticle"   (info)="onAffiche($event)" ></app-article>-->
         <app-article *ngFor="let item of items"
                      [titreArticle]="item.titreArticle"
                      [prixArticle]="item.prixArticle"
