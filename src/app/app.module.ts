@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -8,6 +8,8 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { SnapComponent } from './snap/snap.component';
 import { ArticleComponent } from './article/article.component';
 import {FormsModule} from "@angular/forms";
+import{registerLocaleData} from "@angular/common";
+import * as fr from  "@angular/common/locales/fr";
 
 @NgModule({
   declarations: [
@@ -20,11 +22,14 @@ import {FormsModule} from "@angular/forms";
         FontAwesomeModule,
         FormsModule
     ],
-  providers: [],
+  providers: [
+      {provide:LOCALE_ID,useValue:"fr-FR"}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {
     library.addIconPacks(fas, far,fab);
+    registerLocaleData(fr.default);
   }
 }

@@ -3,24 +3,24 @@
     <img  [src]= urlImageArticle class="card-img-top"  alt="..." >
     <div class="card-body">
         <h5 class="card-title" [ngStyle]="{color:getColor()}">
-            {{titreArticle | uppercase}}
-            <span *ngIf="dispo===false">-indisponible </span>
+            {{titreArticle | uppercase}} {{0.04254 |percent:'1.2-2'}}
+            <span *ngIf="dispo===false">-Indisponible </span>
         </h5>
-       <p class="card-text">{{prixArticle }} €</p>
+       <p class="card-text">{{prixArticle  |currency:'XOF'}} </p>
         <a href="#" class="btn btn-dark" (click)="onLike()" [ngClass]="
-        {'red':  jaime===true,
-         'white':jaime===false
+        {'display':  jaime===true,
+         'hidden' :  jaime===false
         }">
-            <span><fa-icon [icon]="['fas', 'heart']"    [style.color]="iconColor" ></fa-icon></span>
+            <span><fa-icon [icon]="['fas', 'heart']"     [ngStyle]="{'color':iconColor}"></fa-icon></span>
         </a>
             <a href="#" class="btn btn-primary" (click)="onLike()" [ngClass]="
-        {'red':  jaime===false,
-         'white':jaime===true
+        {'display':  jaime===false,
+         'hidden' :  jaime===true
 }">
-            <span><fa-icon [icon]="['fas', 'heart-crack']"    [style.color]="iconColor" ></fa-icon></span>
+            <span><fa-icon [icon]="['fas', 'heart-crack']"    [ngStyle]="{'color':iconColor}" ></fa-icon></span>
         </a>
-        <p class="card-text">{{nbreLikeArticle}}</p>
+        <p class="card-text">{{nbreLikeArticle |number}}</p>
         <input [(ngModel)]="commentArticle" type="text" placeholder="ecrire du texte" class="form-control" >
-        <p class="card-text ms-3">{{commentArticle |lowercase}}</p>
+        <p class="card-text ms-3">{{commentArticle | titlecase}}</p>
     </div>
 </div>

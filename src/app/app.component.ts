@@ -12,26 +12,11 @@ import {ArticleModule} from "./models/article.module";
 
 export class AppComponent implements OnInit{
   mySnap!:FaceSnapModule
-  year1:number=Date.now();
+  creatDate:Date=new Date();
   message:string="";
  // myArticle!:ArticleModule
 
   ngOnInit(){
-    /*this.mySnap = new FaceSnapModule(
-        'Mo',
-        'Mon meilleur ami depuis tout petit !',
-        './assets/images/img1.jpg',
-        0
-    )*/
-    /*this.myArticle=new ArticleModule(
-        'iphone 14',
-        15,
-        '#FFF',
-        "../../assets/images/img2.jpg",
-        0,
-        'alabama'
-    )
-  */
   }
   onAffiche(arg:string){
     return this.message="Merci d'avoir acheter :"+arg;
@@ -51,7 +36,7 @@ export class AppComponent implements OnInit{
       nbreLikeArticle:0,
       commentArticle:'fun',
       dispo:false,
-      iconColor:"#FFF"
+      iconColor:"#ff2749"
     },
     {
       titreArticle:"TV",
