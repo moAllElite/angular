@@ -1,8 +1,6 @@
-.red {
-    color: #FF2749;
+.display {
     display: inline-block;
 }
-.white{
-    color: #FFF;
+.hidden{
     display: none;
 }
