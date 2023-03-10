@@ -16,7 +16,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">Liste d'articles</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><fa-icon [icon]="['fas','euro-sign']"></fa-icon>   Pricing</a>
@@ -28,41 +28,9 @@
         </div>
     </div>
 </nav>
-<!--container-->
-<div class="container mb-4" id="parent-of-trt">
-
-    <button mat-fab extended  id="btnHome">
-        <mat-icon color="warn" >home</mat-icon>
-        Home
-    </button>
-
-    <div class="text-center text-primary">
-        <p>Mise en ligne {{creatDate |date:'le d MMMM yyyy'}}</p>
-        <p>{{4.256 |number}}</p>
-    </div>
-        <!--<div id=" alertMsg"  class="mt-2 text-success text-center">
-            <p>
-                {{message}}
-            </p>
-        </div>-->
-  <!--  <app-snap [snapVvs]="mySnap"></app-snap>-->
-    <div class="d-flex justify-content-evenly">
-        <!-- <app-article [article]="myArticle"   (info)="onAffiche($event)" ></app-article>-->
-        <app-article *ngFor="let item of items"
-                     [titreArticle]="item.titreArticle"
-                     [prixArticle]="item.prixArticle"
-                     [nbreLikeArticle]="item.nbreLikeArticle"
-                     [commentArticle]="item.commentArticle"
-                     [dispo]="item.dispo"
-                     (info)="onAffiche($event)"
-                     [urlImageArticle]="item.urlImageArticle"
-                     [iconColor]="item.iconColor"
-
-        ></app-article>
-    </div>
-</div>
+<router-outlet></router-outlet>
 <!--footer-->
-<footer class="py-5 bg-dark  bottom-0">
+<footer class="py-5 bg-dark  footer-position">
     <div class="container">
        <p class="m-0 text-white text-center"> All elite <fa-icon [icon]="['fas','copyright']"></fa-icon>  2023</p>
     </div>

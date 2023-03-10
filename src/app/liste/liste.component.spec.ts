@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SnapComponent } from './snap.component';
+import { ListeComponent } from './liste.component';
 
-describe('SnapComponent', () => {
-  let component: SnapComponent;
-  let fixture: ComponentFixture<SnapComponent>;
+describe('ListeComponent', () => {
+  let component: ListeComponent;
+  let fixture: ComponentFixture<ListeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SnapComponent ]
+      declarations: [ ListeComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SnapComponent);
+    fixture = TestBed.createComponent(ListeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

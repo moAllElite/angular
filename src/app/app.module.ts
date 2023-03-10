@@ -5,7 +5,6 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { SnapComponent } from './snap/snap.component';
 import { ArticleComponent } from './article/article.component';
 import {FormsModule} from "@angular/forms";
 import{registerLocaleData} from "@angular/common";
@@ -15,14 +14,17 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatIconModule, MatIconRegistry} from "@angular/material/icon";
 import {MatButton, MatButtonModule} from "@angular/material/button";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {DataService} from "../services/data.service";
+import { ListeComponent } from './liste/liste.component';
+import {RouterOutlet} from "@angular/router";
+import { AppRoutingModule } from './app-routing.module';
 
 // @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
-    SnapComponent,
     ArticleComponent,
-
+    ListeComponent,
   ],
     imports: [
         BrowserModule,
@@ -33,9 +35,11 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
         MatIconModule,
         MatButtonToggleModule,
         MatButtonModule,
-
+        RouterOutlet,
+        AppRoutingModule,
     ],
   providers: [
+      DataService,
       {provide:LOCALE_ID,useValue:"fr-FR" }
   ],
   bootstrap: [AppComponent]

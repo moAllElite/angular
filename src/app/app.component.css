@@ -1,18 +1,6 @@
-.show{
-    display: block;
-    visibility: visible;
-}
-.hidden{
-    display: none;
-    visibility: hidden;
-}
-/*
-*/
-#parent-of-trt  {
-    position: relative;
-}
-#btnHome{
+.footer-position{
+    width: 100%;
     position: absolute;
-    right: -5em;
-    bottom: 1px;
+    bottom: 0;
+    left: 0;
 }
