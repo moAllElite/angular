@@ -1,0 +1,18 @@
+.show{
+    display: block;
+    visibility: visible;
+}
+.hidden{
+    display: none;
+    visibility: hidden;
+}
+/*
+*/
+#parent-of-trt  {
+    position: relative;
+}
+#btnHome{
+    position: absolute;
+    right: -5em;
+    bottom: 1px;
+}
