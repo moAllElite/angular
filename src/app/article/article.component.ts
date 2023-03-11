@@ -7,6 +7,7 @@ import {FormsModule} from "@angular/forms";
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit{
+    @Input() idArticle!:number;
     @Input() titreArticle!:string;
     @Input() prixArticle!:number;
     @Input() nbreLikeArticle!:number;

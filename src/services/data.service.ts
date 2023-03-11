@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class DataService {
   itemsArticle=[
     {
+      id:1,
       titreArticle:"iphone",
       prixArticle:15,
       urlImageArticle:"../../assets/images/img5.jpg",
@@ -15,6 +16,7 @@ export class DataService {
       iconColor:"#ff2749"
     },
     {
+      id:2,
       titreArticle:"TV",
       prixArticle:250.99,
       urlImageArticle:"../../assets/images/img2.jpg",
@@ -24,6 +26,7 @@ export class DataService {
       iconColor:"#FFF"
     },
     {
+      id:3,
       titreArticle:"car",
       prixArticle:15000,
       urlImageArticle:"../../assets/images/img4.jpg",
@@ -35,4 +38,13 @@ export class DataService {
   ]
 
   constructor() { }
+  /*
+    cette fonction récupère un objet dans le tableau selon son id passé en paramètre
+   */
+  getArticle(id:number){
+    const  articles=this.itemsArticle.find((a)=>{
+      a.id==id;
+    });
+    return articles;
+  }
 }

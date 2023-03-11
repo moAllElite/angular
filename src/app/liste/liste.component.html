@@ -1,18 +1,11 @@
 <!--container-->
 <div class="container mb-4" id="parent-of-trt">
 
-    <button mat-fab extended  id="btnHome">
-        <mat-icon color="warn" >home</mat-icon>
-        Home
-    </button>
-
     <div class="text-center text-primary">
         <p>Mise en ligne {{creatDate |date:'le d MMMM yyyy'}}</p>
-        <p>{{4.256 |number}}</p>
     </div>
     <div id=" alertMsg"  class="    mt-2 text-success text-center">
         <p>
-
             {{message}}
         </p>
     </div>
@@ -27,6 +20,7 @@
                      (info)="onAffiche($event)"
                      [urlImageArticle]="item.urlImageArticle"
                      [iconColor]="item.iconColor"
+                     [idArticle]="item.id"
 
         ></app-article>
     </div>

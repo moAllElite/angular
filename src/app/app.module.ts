@@ -18,6 +18,7 @@ import {DataService} from "../services/data.service";
 import { ListeComponent } from './liste/liste.component';
 import {RouterOutlet} from "@angular/router";
 import { AppRoutingModule } from './app-routing.module';
+import { DetailsComponent } from './details/details.component';
 
 // @ts-ignore
 @NgModule({
@@ -25,6 +26,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     ArticleComponent,
     ListeComponent,
+    DetailsComponent,
   ],
     imports: [
         BrowserModule,
