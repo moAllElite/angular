@@ -21,7 +21,7 @@ export class ArticleComponent implements OnInit{
    }
    ngOnInit() {
    }
-    onLike(){
+    onLike():void{
         if(this.jaime===true){
             this.jaime=false;
             this.nbreLikeArticle++;
@@ -32,7 +32,7 @@ export class ArticleComponent implements OnInit{
             this.info.emit("");
         }
     }
-    getColor(){
+    getColor():string{
        if(this.dispo===true){
            return  'green';
        }else {

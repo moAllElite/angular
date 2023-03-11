@@ -3,7 +3,7 @@
     <h2>{{titre}}</h2>
     <h3>{{prix|currency:"XOF"}} </h3>
     <h3>{{comment}}</h3>
-    <button mat-fab extended  id="btnHome" routerLink="/">
+    <button mat-fab extended  id="btnHome" (click)="onHome()">
         <mat-icon color="warn" >home</mat-icon>
         Home
     </button>

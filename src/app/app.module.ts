@@ -20,6 +20,7 @@ import {RouterOutlet} from "@angular/router";
 import { AppRoutingModule } from './app-routing.module';
 import { DetailsComponent } from './details/details.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AjouterComponent } from './ajouter/ajouter.component';
 
 // @ts-ignore
 @NgModule({
@@ -29,6 +30,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ListeComponent,
     DetailsComponent,
     PageNotFoundComponent,
+    AjouterComponent,
   ],
     imports: [
         BrowserModule,

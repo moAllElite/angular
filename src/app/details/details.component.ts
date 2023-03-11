@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Route, Router} from "@angular/router";
 import {DataService} from "../../services/data.service";
 
 @Component({
@@ -14,7 +14,8 @@ export class DetailsComponent implements OnInit{
   @Input()comment!:string;
   urlImage!:string;
   constructor(private  route:ActivatedRoute,
-              private dataService:DataService
+              private dataService:DataService,
+              private road:Router
               ) {
   }
 
@@ -34,5 +35,7 @@ export class DetailsComponent implements OnInit{
     // @ts-ignore
     this.urlImage=this.dataService.getArticle(id).urlImageArticle;
   }
-
+  onHome(){
+    this.road.navigateByUrl("/")
+  }
 }

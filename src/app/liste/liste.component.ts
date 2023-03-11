@@ -16,10 +16,10 @@ export class ListeComponent implements OnInit{
   ngOnInit(){
     this.items=this.dataService.itemsArticle;
   }
-  onAffiche(arg:string){
+  onAffiche(arg:string):string{
     return this.message="Merci d'avoir acheter :"+arg;
   }
-  getVisible(){
+  getVisible():string{
     if(this.onAffiche!=null){
       return 'visible';
     }else {
