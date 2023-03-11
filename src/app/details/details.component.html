@@ -1,0 +1,10 @@
+<div class="container mt-4  text-center" id="parent-of-trt">
+    <img [src]="urlImage" class="img-fluid" alt="..." width="540" height="200" >
+    <h2>{{titre}}</h2>
+    <h3>{{prix|currency:"XOF"}} </h3>
+    <h3>{{comment}}</h3>
+    <button mat-fab extended  id="btnHome" routerLink="/">
+        <mat-icon color="warn" >home</mat-icon>
+        Home
+    </button>
+</div>
