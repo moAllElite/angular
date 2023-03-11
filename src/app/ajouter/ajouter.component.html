@@ -1,12 +1,54 @@
-<div class="container  m-5">
-    <h2>Ajouter</h2>
-    <div class=" mb-3 ">
-        <label for="exampleFormControlInput1" class="form-label">Titre</label>
-        <input type="text" id="exampleFormControlInput1" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
-    </div>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@200&display=swap" rel="stylesheet">
+</head>
+<div class="container-sm  mb-5 " >
+    <h1 class="text-center mt-5" >Ajouter un nouveau article</h1>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm" class=".col-6 .col-md-4">
+        <div class=" mb-3 ">
+            <label  class="form-label">Titre</label>
+            <input type="text" [(ngModel)]="titleToAdd" name="title"   minlength="4" #title="ngModel"  required  class="form-control" >
+            <!--title.dirty  ou title.touch empêche  l'affichage du error tant
+               que l'utilisateur n'a pas rempli le formulaire -->
+            <div class="text-danger mt-3" *ngIf="title.invalid && (title.dirty || title.touched)">
+                <!-- on relie le type d'erreur à la propriété required-->
+                <div *ngIf="title.errors?.['required']">
+                    Titre obligatoire
+                </div>
+                <!-- on relie le type d'erreur à la propriété minlenght-->
+                <div *ngIf="title.errors?.['minlength']">
+                    Le titre doît être d'au moins de 4 caractère
+                </div>
+            </div>
+        </div>
 
-    <div class="mb-3">
-        <label for="exampleFormControlInput2" class="form-label">Prix</label>
-        <input type="number" id="exampleFormControlInput2" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
-    </div>
+        <div class="mb-3">
+            <label class="form-label">Prix</label>
+            <!--tout comme title price un identififiant est basé sur ngMofel-->
+            <input type="number" name="price" [(ngModel)]="priceToAdd" required #price="ngModel" class="form-control" >
+            <!--dirty et touched empêche l'affichage de nos messages d'erreurs tant que le user n'aura pas remplie le formulaire -->
+            <div class="mt-3 text-danger" *ngIf="price.invalid && (price.dirty || price.touched)">
+                <!-- on relie le type d'erreur à la propriété minlenght-->
+                <div *ngIf="price.errors?.['required']">
+                    Prix est obligatoire
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div>
+                <textarea class="form-control" name="comment" [(ngModel)]="commentToAdd" #comment="ngModel"
+                          required rows="3" placeholder="Ajouter un commentaire"></textarea>
+                <div *ngIf="comment.invalid && (comment.dirty || comment.touched)">
+                    <div class="text-danger">
+                        Le commentaire ne doit pas être vide
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <!--on récupère l'id du formulaire qui f tant que le formulaire est invalide on désactive le bouton submit-->
+            <button class="btn btn-primary" type="submit" [disabled]="!f.valid" >Envoyer</button>
+        </div>
+    </form>
 </div>
