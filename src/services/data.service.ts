@@ -42,10 +42,10 @@ export class DataService {
     cette fonction récupère un objet dans le tableau selon son id passé en paramètre
    */
  getArticle(id:number){
-   const articles=this.itemsArticle.find((a)=>{
+   const articles=this.itemsArticle.find(
      //on retourne l'id item == param id
-     return a.id==id;
-   })
+       a=>a.id==id
+   )
    return articles;
  }
 }
