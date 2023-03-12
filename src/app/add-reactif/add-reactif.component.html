@@ -1,0 +1,17 @@
+<h1 class="text-center mt-4">Ajouter un article réactif</h1>
+<!--formulaire réactif-->
+<div class="container-xxl">
+    <form (ngSubmit)="onEnvoyer(f)" #f="ngForm">
+        <div class="mb-3">
+            <label>Titre</label>
+            <input type="text" name="title" class="form-control" [formControl]="titleToAdd">
+        </div>
+        <div class="mb-3">
+            <label>Prix</label>
+            <input type="number" class="form-control"  [formControl]="priceToAdd">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-secondary" type="submit">Envoyer</button>
+        </div>
+    </form>
+</div>
