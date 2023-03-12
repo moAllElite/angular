@@ -21,6 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { DetailsComponent } from './details/details.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AjouterComponent } from './ajouter/ajouter.component';
+import { AddReactifComponent } from './add-reactif/add-reactif.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 // @ts-ignore
 @NgModule({
@@ -31,6 +33,7 @@ import { AjouterComponent } from './ajouter/ajouter.component';
     DetailsComponent,
     PageNotFoundComponent,
     AjouterComponent,
+    AddReactifComponent,
   ],
     imports: [
         BrowserModule,
@@ -43,6 +46,7 @@ import { AjouterComponent } from './ajouter/ajouter.component';
         MatButtonModule,
         RouterOutlet,
         AppRoutingModule,
+        ReactiveFormsModule,
     ],
   providers: [
       DataService,
