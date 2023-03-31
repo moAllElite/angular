@@ -14,6 +14,12 @@ export class AjouterComponent implements OnInit,OnDestroy{
   commentToAdd='';
   seconde:number=0;
   private destroy$!:Subject<boolean>;
+
+  /**
+   * Les opérateurs  take()  et  takeUntil()  sont donc les deux à utiliser
+   * lorsque vous souscrivez à un Observable dans votre code TypeScript –
+   * lorsque vous appelez sa méthode  subscribe()
+   */
   ngOnInit(): void {
     this.destroy$=new Subject<boolean>();
     const compteur$=interval(1000).pipe(
@@ -25,7 +31,9 @@ export class AjouterComponent implements OnInit,OnDestroy{
       complete:()=>console.info("complete")
     });
   }
-
+  ngOnDestroy(): void {
+    this.destroy$.next(true);
+  }
   onSubmit(form:NgForm):void {
     const newTitle=this.titleToAdd;
     const newPrice=this.priceToAdd;
@@ -35,7 +43,5 @@ export class AjouterComponent implements OnInit,OnDestroy{
     console.log("new comment :"+newComment);
   }
 
-  ngOnDestroy(): void {
-    this.destroy$.next(true);
-  }
+
 }
