@@ -16,7 +16,7 @@
             <a href="#" class="btn btn-primary" (click)="onLike()" [ngClass]="
         {'display':  jaime===false,
          'hidden' :  jaime===true
-}">
+        }">
             <span><fa-icon [icon]="['fas', 'heart-crack']"    [ngStyle]="{'color':iconColor}" ></fa-icon></span>
         </a>
         <p class="card-text">{{nbreLikeArticle |number}}</p>

@@ -10,18 +10,18 @@ export class DataService {
     {
       id:1,
       titreArticle:"iphone",
-      prixArticle:15,
+      prixArticle:150000,
       urlImageArticle:"../../assets/images/img5.jpg",
-      nbreLikeArticle:0,
+      nbreLikeArticle:1,
       commentArticle:'fun',
       dispo:false,
-      iconColor:"#ff2749"
+      iconColor:"#ffff"
     },
     {
       id:2,
-      titreArticle:"TV",
-      prixArticle:250.99,
-      urlImageArticle:"../../assets/images/img2.jpg",
+      titreArticle:"bike ",
+      prixArticle:2499999.99,
+      urlImageArticle:"../../assets/images/img3.jpg",
       nbreLikeArticle:0,
       commentArticle:'fun',
       dispo:false,

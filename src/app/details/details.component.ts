@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Route, Router} from "@angular/router";
 import {DataService} from "../../services/data.service";
 
+
+// @ts-ignore
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -13,6 +15,7 @@ export class DetailsComponent implements OnInit{
   @Input()  prix!:number;
   @Input()comment!:string;
   urlImage!:string;
+
   constructor(private  route:ActivatedRoute,
               private dataService:DataService,
               private road:Router
