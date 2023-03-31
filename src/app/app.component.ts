@@ -1,5 +1,5 @@
 import {Component, Input, OnInit,OnDestroy} from '@angular/core';
-import {filter, interval, Subscription} from "rxjs";
+import {filter, interval, Observable, Subscription} from "rxjs";
 import {map} from "rxjs/operators";
 
 
@@ -11,31 +11,37 @@ import {map} from "rxjs/operators";
 
 export class AppComponent implements OnInit,OnDestroy{
 
-  seconde!:string;
+  //seconde!:string;
+  /**
+   * La norme est d'ajouter un  $  à la fin du nom de toute variable qui contient un Observable.
+   */
+  compteur$!:Observable<number>
   private subscribeCompteur!: Subscription;
 
-  ngOnInit() {
-    const compteur=interval(1000).pipe(
-      filter(value => value % 2===0 ),
-      map(value => value % 2 ===0 ?
-        `${value} est pair`:
-        `${value} est impair`
-      )
+  /**
+   *
+   */
+  ngOnInit() :void{
+    this.compteur$=interval(1000);
 
-    );
-    this.subscribeCompteur=compteur.subscribe({
+      /*.pipe(filter(value => value % 2===0 ),
+              map(value => value % 2 ===0 ?
+                   `${value} est pair`:
+                    `${value} est impair`
+      ));*/
+    /*this.subscribeCompteur=compteur$.subscribe({
       next:(s)=>this.seconde=s,
       error:(e)=>console.error(e),
       complete:()=>console.info("complete")
-    });
+    });*/
   }
 
   /**
-   * au moment de la destruction de mon composant grâce à la méthode unscubscribe
-   * nous permet d'eviter les fuite de donnée
+   * au moment de la destruction de mon composant grâce à la méthode unsubscribe
+   * quand on n'a plus besoin de l'Observable, car sinon, on court le risque de créer des fuites de mémoire !
    */
 
-  ngOnDestroy(){
+  ngOnDestroy():void{
     this.subscribeCompteur.unsubscribe();
   }
 
