@@ -1,7 +1,7 @@
-import {Component, NgModule, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, NgModule, OnDestroy, OnInit} from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {interval, Observable, Subject} from "rxjs";
-import {tap} from  "rxjs/operators"
+import {map, tap} from "rxjs/operators"
 
 @Component({
   selector: 'app-ajouter',
@@ -12,11 +12,12 @@ export class AjouterComponent implements OnInit,OnDestroy{
   titleToAdd='';
   priceToAdd='';
   commentToAdd='';
-  compteur$!:any;
+  @Input()compteur$!:any;
   private destroy$!:Subject<boolean>;
   ngOnInit(): void {
     this.destroy$=new Subject<boolean>();
     const compteur$=interval(1000).pipe(
+      map(value=>value),
       tap(console.log)
     ).subscribe();
   }
