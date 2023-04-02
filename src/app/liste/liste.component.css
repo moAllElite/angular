@@ -19,3 +19,6 @@
   line-height: 1.2px;
   font-weight: 700;
 }
+#card{
+  display: block;
+}

@@ -1,6 +1,6 @@
 import {Component, Input, NgModule, OnDestroy, OnInit} from '@angular/core';
 import {NgForm} from "@angular/forms";
-import {filter, interval, Observable, Subject, takeUntil} from "rxjs";
+import {filter, interval, Observable, Subject, take, takeUntil} from "rxjs";
 import {map, tap} from "rxjs/operators"
 
 @Component({
@@ -22,7 +22,9 @@ export class AjouterComponent implements OnInit,OnDestroy{
    */
   ngOnInit(): void {
     this.destroy$=new Subject<boolean>();
-    const compteur$=interval(1000).pipe(
+    const compteur$=interval(500).pipe(
+      map(value => 2*(value+1)),
+      take(3),
       takeUntil(this.destroy$),
       tap(console.log)
     ).subscribe({

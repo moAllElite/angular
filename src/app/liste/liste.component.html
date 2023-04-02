@@ -10,7 +10,7 @@
         <!--    {{message}}-->
         </p>
     </div>
-    <div class="d-flex justify-content-evenly">
+    <div class="d-flex justify-content-evenly" id="card">
         <!--<app-article    (info)="onAffiche($event)" ></app-article >-->
         <app-article *ngFor="let item of items"
                      [titreArticle]="item.titreArticle"

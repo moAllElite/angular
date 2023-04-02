@@ -3,25 +3,25 @@
     <img  [src]= urlImageArticle class="card-img-top"  alt="..." >
     <div class="card-body">
         <h3 class="card-title" [ngStyle]="{color:getColor()}">
-            {{titreArticle | uppercase}}<!-- {{0.04254 |percent:'1.2-2'}}-->
-            <span *ngIf="dispo===false">-Indisponible </span>
-        </h3>
-       <p class="card-text">{{prixArticle  |currency:'XOF'}} </p>
-        <a href="#" class="btn btn-dark" (click)="onLike()" [ngClass]="
-        {'display':  jaime===true,
-         'hidden' :  jaime===false
-        }">
-            <span><fa-icon [icon]="['fas', 'heart']"     [ngStyle]="{'color':iconColor}"></fa-icon></span>
-        </a>
-            <a href="#" class="btn btn-primary" (click)="onLike()" [ngClass]="
-        {'display':  jaime===false,
-         'hidden' :  jaime===true
-        }">
-            <span><fa-icon [icon]="['fas', 'heart-crack']"    [ngStyle]="{'color':iconColor}" ></fa-icon></span>
-        </a>
-        <p class="card-text">{{nbreLikeArticle |number}}</p>
-        <a routerLink="/details/{{idArticle}}" class=" btn btn-primary mb-4"><fa-icon [icon]="['fas','circle-plus']"></fa-icon> Voir details </a>
-        <input [(ngModel)]="commentArticle" type="text" placeholder="ecrire du texte" class="form-control" >
-        <p class="card-text ms-3">{{commentArticle | titlecase}}</p>
-    </div>
+        {{titreArticle |titlecase}}
+        <span *ngIf="dispo===false">-Indisponible </span>
+    </h3>
+   <p class="card-text">{{prixArticle  |currency:'XOF'}} </p>
+    <a href="#" class="btn btn-dark" (click)="onLike()" [ngClass]="
+    {'display':  jaime===true,
+     'hidden' :  jaime===false
+    }">
+        <span><fa-icon [icon]="['fas', 'heart']"     [ngStyle]="{'color':iconColor}"></fa-icon></span>
+    </a>
+        <a href="#" class="btn btn-primary" (click)="onLike()" [ngClass]="
+    {'display':  jaime===false,
+     'hidden' :  jaime===true
+    }">
+        <span><fa-icon [icon]="['fas', 'heart-crack']"    [ngStyle]="{'color':iconColor}" ></fa-icon></span>
+    </a>
+    <p class="card-text">{{nbreLikeArticle |number}}</p>
+    <a routerLink="/details/{{idArticle}}" class=" btn btn-primary mb-4"><fa-icon [icon]="['fas','circle-plus']"></fa-icon> Voir details </a>
+    <input [(ngModel)]="commentArticle" type="text" placeholder="ecrire du texte" class="form-control" >
+    <p class="card-text ms-3">{{commentArticle | titlecase}}</p>
+  </div>
 </div>
