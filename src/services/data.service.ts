@@ -14,8 +14,7 @@ export class DataService {
       urlImageArticle:"../../assets/images/img5.jpg",
       nbreLikeArticle:1,
       commentArticle:'fun',
-      dispo:false,
-      iconColor:"#ffff"
+      dispo:false
     },
     {
       id:2,
@@ -25,7 +24,6 @@ export class DataService {
       nbreLikeArticle:0,
       commentArticle:'fun',
       dispo:false,
-      iconColor:"#FFF"
     },
     {
       id:3,
@@ -34,8 +32,7 @@ export class DataService {
       urlImageArticle:"../../assets/images/img4.jpg",
       nbreLikeArticle:0,
       commentArticle:'fun',
-      dispo:true,
-      iconColor:"#FFF"
+      dispo:true
     }
   ]
 
