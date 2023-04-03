@@ -6,7 +6,7 @@
 /out-tsc
 /bazel-out
 #api key
-src/services/api-key.ts
+/src/services/api-key.ts
 # Node
 /node_modules
 npm-debug.log
